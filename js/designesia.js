@@ -3,13 +3,13 @@
  * --------------------------------------------------*/
 (function($) {
 	/* --------------------------------------------------
-	 * template options (customable)
-	 * --------------------------------------------------*/
-	var de_header_style = 2; // 1 - solid, 2 - transparent
-	var de_header_layout = 2; // 1 - default, 2 - extended
-	var de_menu_separator = 0; // 1 - dotted, 2 - border, 3 - circle, 4 - square, 5 - plus, 6 - strip, 0 - none
-	var de_header_color = 1; // 1 - dark, - 2 light
-	var de_header_scroll_color = 1; // 1 - dark, - 2 light
+    * template options (customable)
+    * --------------------------------------------------*/
+    var de_header_style = 1; // 1 - solid, 2 - transparent
+    var de_header_layout = 1; // 1 - default, 2 - extended
+    var de_menu_separator = 2; // 1 - dotted, 2 - border, 3 - circle, 4 - square, 5 - plus, 6 - strip, 0 - none
+    var de_header_color = 2; // 1 - dark, - 2 light
+    var de_header_scroll_color = 2; // 1 - dark, - 2 light
 	/* --------------------------------------------------
 	 * predefined vars
 	 * --------------------------------------------------*/
@@ -18,7 +18,7 @@
 	var mb;
 	var instances = [];
 	var $window = $(window);
-
+	
 	/* --------------------------------------------------
 	 * header | style
 	 * --------------------------------------------------*/
@@ -569,21 +569,41 @@
 	 * center x and y
 	 * --------------------------------------------------*/
 	function center_xy() {
-		jQuery('.center-xy').each(function() {
-			jQuery(this).parent().find("img").on('load', function() {
-				var w = parseInt(jQuery(this).parent().find(".center-xy").css("width"), 10);
-				var h = parseInt(jQuery(this).parent().find(".center-xy").css("height"), 10);
-				var pic_w = jQuery(this).css("width");
-				var pic_h = jQuery(this).css("height");
-				jQuery(this).parent().find(".center-xy").css("left", parseInt(pic_w, 10) / 2 - w / 2);
-				jQuery(this).parent().find(".center-xy").css("top", parseInt(pic_h, 10) / 2 - h / 2);
-				jQuery(this).parent().find(".bg-overlay").css("width", pic_w);
-				jQuery(this).parent().find(".bg-overlay").css("height", pic_h);
-			}).each(function() {
-				if (this.complete) $(this).load();
-			});
-		});
-	}
+        jQuery('.center-xy').each(function () {
+            jQuery(this).parent().find("img").each(function () {
+                var img = jQuery(this);
+
+                // If image is already loaded
+                if (this.complete) {
+                    adjust_center(img);
+                } else {
+                    img.on('load', function () {
+                       adjust_center(img);
+                    });
+                }
+            });
+        });
+
+        // helper function to do the math
+        function adjust_center(img) {
+            var parent = img.parent();
+            var w = parseInt(parent.find(".center-xy").css("width"), 10);
+            var h = parseInt(parent.find(".center-xy").css("height"), 10);
+            var pic_w = img.width();
+            var pic_h = img.height();
+
+            parent.find(".center-xy").css({
+                left: pic_w / 2 - w / 2,
+                top: pic_h / 2 - h / 2
+            });
+
+            parent.find(".bg-overlay").css({
+                width: pic_w,
+                height: pic_h
+            });
+        }
+    }
+
 	/* --------------------------------------------------
 	 * add arrow for mobile menu
 	 * --------------------------------------------------*/

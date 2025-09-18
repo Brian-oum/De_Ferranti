@@ -10,189 +10,25 @@
     <meta name="author" content="Geoken Energy Ltd">
 
     <!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Font Awesome (icons) -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Font Awesome (icons) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-<!-- Swiper (modern slider) -->
-<link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Swiper (modern slider) -->
+    <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
 
-<!-- Animate.css (for WOW.js animations) -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <!-- Animate.css (for WOW.js animations) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
 
-<!-- Magnific Popup -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet">
+    <!-- Magnific Popup -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet">
 
+    <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <!-- Custom Styles (combine into one if possible) -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/color.css" rel="stylesheet">
-    <link href="css/demo.css" rel="stylesheet">
-    
-    <style>
-        /* Custom Swiper Styles for Geoken Energy */
-        #section-slider {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        .swiper {
-            width: 100%;
-            height: 100%;
-        }
-
-        .swiper-slide {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .swiper-slide::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.2) 100%);
-            z-index: 1;
-        }
-
-        .slide-content {
-            position: relative;
-            z-index: 2;
-            color: white;
-            text-align: left;
-            padding: 0 15px;
-            max-width: 1200px;
-        }
-
-        .very-big-white {
-            font-size: 4rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .slide-content p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            line-height: 1.6;
-            opacity: 0.9;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
-        }
-
-        .btn-slider {
-            display: inline-block;
-            padding: 15px 35px;
-            background-color: #f8c100;
-            color: #000;
-            text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            border: 2px solid #f8c100;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-
-        .btn-slider:hover {
-            background-color: transparent;
-            color: #f8c100;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        }
-
-        /* Swiper Navigation */
-        .swiper-button-next,
-        .swiper-button-prev {
-            color: #f8c100;
-            width: 50px;
-            height: 50px;
-            background: rgba(0,0,0,0.5);
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-
-        .swiper-button-next:after,
-        .swiper-button-prev:after {
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        .swiper-button-next:hover,
-        .swiper-button-prev:hover {
-            background: rgba(0,0,0,0.8);
-            transform: scale(1.1);
-        }
-
-        .swiper-pagination-bullet {
-            width: 12px;
-            height: 12px;
-            background: white;
-            opacity: 0.5;
-            transition: all 0.3s ease;
-        }
-
-        .swiper-pagination-bullet-active {
-            background: #f8c100;
-            opacity: 1;
-            transform: scale(1.2);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .very-big-white {
-                font-size: 3rem;
-            }
-            
-            .slide-content p {
-                font-size: 1.1rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            #section-slider {
-                height: 80vh;
-            }
-            
-            .very-big-white {
-                font-size: 2.5rem;
-            }
-            
-            .slide-content {
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .very-big-white {
-                font-size: 2rem;
-            }
-            
-            .slide-content p {
-                font-size: 1rem;
-            }
-            
-            .btn-slider {
-                padding: 12px 25px;
-                font-size: 0.9rem;
-            }
-            
-            .swiper-button-next,
-            .swiper-button-prev {
-                display: none;
-            }
-        }
-    </style>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body id="homepage">
@@ -225,14 +61,18 @@
             </div>
 
             <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
+                <div class="row align-items-center">
+                    <div class="col-md-3">
                         <!-- logo begin -->
                         <div id="logo">
-                                <img class="logo" src="images/logo.jpg" alt="">
+                            <a href="Home.html">
+                                <img class="logo" src="images/logo.jpg" alt="Geoken Energy Ltd">
+                            </a>
                         </div>
                         <!-- logo close -->
-
+                    </div>
+                    
+                    <div class="col-md-9 d-flex justify-content-end">
                         <!-- small button begin -->
                         <span id="menu-btn"></span>
                         <!-- small button close -->
@@ -245,9 +85,9 @@
                                     <ul>
                                         <li><a href="#">Renewable Energy</a>
                                             <ul>
-                                                <li><a href="#">Automated cleaning systems for solar panel</a></li>
+                                                <li><a href="automated_solar.html">Automated cleaning systems for solar panel</a></li>
                                                 <li><a href="solar-pv-systems.html">Solar PV Systems</a></li>
-                                                <li><a href="solar-powered-water-pumps.html">Solar-powered Water Pumps</a></li>
+                                                <li><a href="sola-powered-water-pumps.html">Solar-powered Water Pumps</a></li>
                                                  <li><a href="solar-lighting.html">Solar Street Lighting</a></li>
                                                  <li><a href="solar-powered-back-up-systems.html">Solar Powered Back-up Systems</a></li>
                                             </ul>
@@ -298,7 +138,7 @@
                <div class="swiper-wrapper">
         
                  <!-- Slide 1 -->
-                 <div class="swiper-slide" style="background-image:url('images/wide1.jpg'); background-size:cover; background-position:center;">
+                 <div class="swiper-slide">
                    <div class="slide-content container">
                      <h2 class="very-big-white animate__animated animate__fadeInLeft">Build The Future<span class="id-color">.</span></h2>
                      <p class="animate__animated animate__fadeInUp">
@@ -310,7 +150,7 @@
                  </div>
         
                  <!-- Slide 2 -->
-                 <div class="swiper-slide" style="background-image:url('images/wide2.jpg'); background-size:cover; background-position:center;">
+                 <div class="swiper-slide">
                    <div class="slide-content container">
                      <h2 class="very-big-white animate__animated animate__fadeInLeft">Professional Team<span class="id-color">.</span></h2>
                      <p class="animate__animated animate__fadeInUp">
@@ -322,7 +162,7 @@
                  </div>
         
                  <!-- Slide 3 -->
-                 <div class="swiper-slide" style="background-image:url('images/wide3.jpg'); background-size:cover; background-position:center;">
+                 <div class="swiper-slide">
                    <div class="slide-content container">
                      <h2 class="very-big-white animate__animated animate__fadeInLeft">Sustainable Solutions<span class="id-color">.</span></h2>
                      <p class="animate__animated animate__fadeInUp">
@@ -346,9 +186,9 @@
             <!-- section begin -->
             <section class="call-to-action bg-color dark pt20 pb20" data-speed="5" data-type="background">
                 <div class="container">
-                    <div class="row">
+                    <div class="row align-items-center">
                         <div class="col-md-8">
-                            <h3 class="mt10">Looking for best partner for your next engineering works?</h3>
+                            <h3 class="mt10 mb10">Looking for best partner for your next engineering works?</h3>
                         </div>
 
                         <div class="col-md-4 text-right">
@@ -360,16 +200,15 @@
             <!-- section close -->
 
             <!-- section begin -->
-            <section id="section-about">
+            <section id="section-about" class="pt80 pb80">
                 <div class="container">
                     <div class="row">
 
                         <div class="col-md-4 col-sm-6 wow fadeInUp">
-
                             <figure class="pic-hover hover-scale mb20">
                                 <span class="center-xy">
                                     <a class="popup-youtube" href="https://www.youtube.com/watch?v=rwvmru5JmXk">
-                                        <i class="fa fa-play btn-action btn-play btn-action-hide"></i></a>
+                                        <i class="fa fa-play btn-action btn-action-hide"></i></a>
                                 </span>
                                 <span class="bg-overlay"></span>
                                 <img src="images/pic_1.jpg" alt="Solar Solutions" class="img-fluid" loading="lazy">
@@ -378,41 +217,40 @@
                             <h3>Renewable Energy</h3>
                             <p>
                                 Our solar panel cleaning systems are the industry's finest, and make maximizing production from your home solar panels a breeze. 
-							<br>
-                                <a href="#" class="read_more mt10">read more <i class="fa fa-chevron-right id-color"></i></a>
                             </p>
+                            <a href="#" class="read_more mt10">read more <i class="fa fa-chevron-right id-color"></i></a>
                         </div>
 
                         <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
                             <figure class="pic-hover hover-scale mb20">
                                 <span class="center-xy">
-                                    <a class="image-popup" href="images/pic_1.jpg">
+                                    <a class="image-popup" href="images/pic_2.jpg">
                                         <i class="fa fa-image btn-action btn-action-hide"></i></a>
                                 </span>
                                 <span class="bg-overlay"></span>
-                                <img src="images/wide1.jpg" alt="Wind Solutions" class="img-fluid" loading="lazy">
+                                <img src="images/pic_2.jpg" alt="Mechanical Engineering" class="img-fluid" loading="lazy">
                             </figure>
                             <h3>Mechanical Engineering</h3>
                             <p>
-                                We design systems to maximise efficiency and comfort. Our team of experienced engineers will survey your premises and design a system that is suitable for your needs. <br>
-                                <a href="#" class="read_more mt10">read more <i class="fa fa-chevron-right id-color"></i></a>
+                                We design systems to maximise efficiency and comfort. Our team of experienced engineers will survey your premises and design a system that is suitable for your needs.
                             </p>
+                            <a href="#" class="read_more mt10">read more <i class="fa fa-chevron-right id-color"></i></a>
                         </div>
 
                         <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
                             <figure class="pic-hover hover-scale mb20">
                                 <span class="center-xy">
-                                    <a class="image-popup" href="images/wide2.jpg">
+                                    <a class="image-popup" href="images/pic_3.jpg">
                                         <i class="fa fa-image btn-action btn-action-hide"></i></a>
                                 </span>
                                 <span class="bg-overlay"></span>
-                                <img src="images/wide2.jpg" alt="Biogas Solutions" class="img-fluid" loading="lazy">
+                                <img src="images/pic_3.jpg" alt="Security Solutions" class="img-fluid" loading="lazy">
                             </figure>
                             <h3>Security & Surveillance</h3>
                             <p>
-                                We install your security system quickly, discreetly, and with minimum disruption. We test all new installations to ensure that they are reliable and resilient.  <br>
-                                <a href="#" class="read_more mt10">read more <i class="fa fa-chevron-right id-color"></i></a>
+                                We install your security system quickly, discreetly, and with minimum disruption. We test all new installations to ensure that they are reliable and resilient.
                             </p>
+                            <a href="#" class="read_more mt10">read more <i class="fa fa-chevron-right id-color"></i></a>
                         </div>
                     </div>
                 </div>
@@ -433,7 +271,7 @@
                             <!-- feature box begin -->
                             <div class="feature-box-small-icon col-md-4 wow fadeIn" data-wow-delay="0">
                                 <div class="inner">
-                                    <span class="icon wow fadeIn" data-wow-delay=".4s"><i class="icon_box-checked"></i></span>
+                                    <span class="icon wow fadeIn" data-wow-delay=".4s"><i class="fa fa-users"></i></span>
                                     <div class="text">
                                         <h3>Professional Staff</h3>
                                         Our Staff are competent and have a wealth of experience in their fields of work
@@ -445,7 +283,7 @@
                             <!-- feature box begin -->
                             <div class="feature-box-small-icon col-md-4 wow fadeIn" data-wow-delay=".2s">
                                 <div class="inner">
-                                    <span class="icon wow fadeIn" data-wow-delay=".4s"><i class="icon_box-checked"></i></span>
+                                    <span class="icon wow fadeIn" data-wow-delay=".4s"><i class="fa fa-money"></i></span>
                                     <div class="text">
                                         <h3>Save Time and Money</h3>
                                         We complete our projects within the time stipulated and within the budget limit                                    </div>
@@ -456,7 +294,7 @@
                             <!-- feature box begin -->
                             <div class="feature-box-small-icon col-md-4 wow fadeIn" data-wow-delay=".4s">
                                 <div class="inner">
-                                    <span class="icon wow fadeIn" data-wow-delay=".4s"><i class="icon_box-checked"></i></span>
+                                    <span class="icon wow fadeIn" data-wow-delay=".4s"><i class="fa fa-calculator"></i></span>
                                     <div class="text">
                                         <h3>Detailed Estimated</h3>
                                         At Geoken we do the project cost estimate that doesn't deviate much from the exact cost of the project
@@ -470,7 +308,7 @@
                             <!-- feature box begin -->
                             <div class="feature-box-small-icon col-md-4 wow fadeIn" data-wow-delay=".6s">
                                 <div class="inner">
-                                    <span class="icon wow fadeIn" data-wow-delay=".4s"><i class="icon_box-checked"></i></span>
+                                    <span class="icon wow fadeIn" data-wow-delay=".4s"><i class="fa fa-clock-o"></i></span>
                                     <div class="text">
                                         <h3>On Time Completion</h3>
                                         Our experience enables us to complete any magnitude of projects on time 
@@ -482,7 +320,7 @@
                             <!-- feature box begin -->
                             <div class="feature-box-small-icon col-md-4 wow fadeIn" data-wow-delay=".8s">
                                 <div class="inner">
-                                    <span class="icon wow fadeIn" data-wow-delay=".4s"><i class="icon_box-checked"></i></span>
+                                    <span class="icon wow fadeIn" data-wow-delay=".4s"><i class="fa fa-eye"></i></span>
                                     <div class="text">
                                         <h3>No Hidden Cost</h3>
                                         We are transparent on the requirements needed for the projects' execution
@@ -494,7 +332,7 @@
                             <!-- feature box begin -->
                             <div class="feature-box-small-icon col-md-4 wow fadeIn" data-wow-delay="1s">
                                 <div class="inner">
-                                    <span class="icon wow fadeIn" data-wow-delay=".4s"><i class="icon_box-checked"></i></span>
+                                    <span class="icon wow fadeIn" data-wow-delay=".4s"><i class="fa fa-thumbs-up"></i></span>
                                     <div class="text">
                                         <h3>Zero Complaints</h3>
                                         We do our projects as per the requirements of the client and as stated on the contract
@@ -511,7 +349,7 @@
 
             <!-- section begin -->
             <section id="section-fun-facts" class="bg-color no-top no-bottom">
-                <div class="pt10 pb10">
+                <div class="pt40 pb40">
                     <div class="container">
 
                         <div class="row">
@@ -596,7 +434,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
-                        <img src="images/logo.jpg" class="logo-small" alt=""><br>
+                        <img src="https://placehold.co/200x60/003366/FFFFFF/png?text=GEOKEN+ENERGY" class="logo-small" alt=""><br>
+                        <p>Geoken Energy Ltd is a leading engineering company specializing in renewable energy, electrical engineering, and construction services.</p>
                     </div>
 
                     <div class="col-md-4">
@@ -662,21 +501,73 @@
     <script>
         new WOW().init();
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script
-    <script src="js/designesia.js"></script>
-    <script src="demo/demo.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar.js/0.6.2/jquery.stellar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/counterup2@2.0.2/dist/index.min.js"></script>
 
-    <!-- Initialize Swiper -->
-    <script defer>
-        document.addEventListener("DOMContentLoaded", function () {
-          new Swiper('.mySwiper', {
-            loop: false,
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    // Initialize Swiper
+        new Swiper('.mySwiper', {
+            loop: true,
             autoplay: { delay: 5000 },
             pagination: { el: '.swiper-pagination', clickable: true },
             navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-          });
         });
-    </script>
+
+        // Mobile menu toggle
+        $('#menu-btn').click(function() {
+           $('nav').toggleClass('active');
+        });
+
+        // Preloader
+        $(window).on('load', function() {
+           $('#preloader').fadeOut('slow');
+        });
+
+        // Back to top
+        $(window).scroll(function() {
+           if ($(this).scrollTop() > 100) {
+              $('#back-to-top').fadeIn();
+           } else {
+              $('#back-to-top').fadeOut();
+           }
+        });
+    
+        $('#back-to-top').click(function() {
+            $('body,html').animate({ scrollTop: 0 }, 800);
+               return false;
+        });
+
+        // Header scroll behavior
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 50) {
+               $('header').addClass('scrolled');
+            } else {
+               $('header').removeClass('scrolled');
+            }
+        });
+
+        // 🔥 CounterUp (trigger when visible)
+        const counters = document.querySelectorAll(".timer");
+        const options = { threshold: 0.6 };
+        const observer = new IntersectionObserver((entries, observer) => {
+           entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                window.counterUp.default(entry.target, {
+                    duration: parseInt(entry.target.getAttribute("data-speed")) || 2000,
+                    delay: 16
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+        }, options);
+
+        counters.forEach(counter => observer.observe(counter));
+    });
+</script>
+
 
 </body>
 </html>
