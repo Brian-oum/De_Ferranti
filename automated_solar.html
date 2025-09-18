@@ -905,6 +905,25 @@
             background: var(--secondary-color);
             transform: translateY(-2px);
         }
+        @media (max-width: 767px) {
+    /* Hide top info on mobile devices */
+    .top-info {
+        display: none;
+    }
+    
+    /* Adjust header position since top info is hidden */
+    header {
+        top: 0;
+    }
+    
+    body {
+        padding-top: 70px; /* Reduced padding since top info is hidden */
+    }
+    
+    #subheader {
+        margin-top: -70px; /* Adjusted to match new body padding */
+    }
+}
     </style>
 </head>
 <body>

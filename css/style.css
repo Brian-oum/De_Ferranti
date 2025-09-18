@@ -155,6 +155,26 @@
             margin: 0 15px;
         }
 
+        #mainmenu ul li ul li a {
+           padding: 4px 15px; /* Reduced vertical padding */
+        }
+
+        /* Or even more compact */
+        #mainmenu ul li ul li a {
+           padding: 2px 15px;
+           font-size: 0.85rem; /* Optional: slightly smaller font */
+        }
+        
+        #mainmenu ul li  a {
+           padding: 4px 15px; /* Reduced vertical padding */
+        }
+
+        /* Or even more compact */
+        #mainmenu ul li  a {
+           padding: 2px 15px;
+           font-size: 0.85rem; /* Optional: slightly smaller font */
+        }
+        
         #mainmenu > li > a {
             color: #fff; /* White text for transparent header */
             font-weight: 600;
