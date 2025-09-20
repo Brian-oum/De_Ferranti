@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Solar PV Systems - Geoken Energy Limited</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional solar PV system design, installation and maintenance services from Geoken Energy">
+    <meta name="keywords" content="solar PV, solar panels, renewable energy, Kenya, Nairobi, solar installation">
+    <meta name="author" content="Geoken Energy">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #f8c41c;
+            --secondary-color: #1a365d;
+            --accent-color: #e53e3e;
+            --light-color: #f7fafc;
+            --dark-color: #2d3748;
+            --text-color: #4a5568;
+            --white: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow: 0 5px 15px rgba(0,0,0,0.05);
+            --gradient: linear-gradient(to right, var(--secondary-color), #2c5282);
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-top: 90px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: transparent;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background: var(--secondary-color);
+        }
+
+        header.scrolled #mainmenu > li > a,
+        header.scrolled #menu-btn span {
+            color: white;
+        }
+
+        .top-info {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.85rem;
+        }
+
+        .top-info .info-item {
+            display: inline-block;
+            margin-right: 15px;
+        }
+        
+        .top-info .id-color {
+            color: var(--primary-color);
+            margin-right: 5px;
+        }
+        
+        .top-info .social a {
+            color: white;
+            margin-left: 10px;
+            transition: color 0.3s;
+        }
+        
+        .top-info .social a:hover {
+            color: var(--primary-color);
+        }
+        
+        #logo {
+            padding: 12px 0;
+        }
+        
+        /* Mobile menu button */
+        #menu-btn {
+            display: none;
+            position: absolute;
+            right: 15px;
+            top: 25px;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        #menu-btn span {
+            display: block;
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            background: var(--dark-color);
+            border-radius: 3px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+        }
+        
+        #menu-btn span:nth-child(1) {
+            top: 0px;
+        }
+        
+        #menu-btn span:nth-child(2) {
+            top: 10px;
+        }
+        
+        #menu-btn span:nth-child(3) {
+            top: 20px;
+        }
+        
+        #menu-btn.open span:nth-child(1) {
+            top: 10px;
+            transform: rotate(135deg);
+        }
+        
+        #menu-btn.open span:nth-child(2) {
+            opacity: 0;
+            left: -30px;
+        }
+        
+        #menu-btn.open span:nth-child(3) {
+            top: 10px;
+            transform: rotate(-135deg);
+        }
+        
+        /* Navigation styles */
+        nav {
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        #mainmenu {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+        }
+        
+        #mainmenu > li {
+            position: relative;
+        }
+        
+        #mainmenu > li > a {
+            display: block;
+            padding: 20px 15px;
+            color: var(--dark-color);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        #mainmenu > li > a:hover, 
+        #mainmenu > li:hover > a {
+            color: var(--primary-color);
+        }
+        
+        #mainmenu ul {
+           position: absolute;
+           left: 0;
+           top: 100%;
+           background: var(--white);
+           width: 220px;
+           box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+           opacity: 0;
+           visibility: hidden;
+           transform: translateY(10px);
+           transition: all 0.3s;
+           z-index: 1000;
+           padding: 10px 0;
+           list-style: none;
+        }
+
+        
+        #mainmenu li:hover > ul {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        #mainmenu ul li {
+            position: relative;
+        }
+        
+        #mainmenu ul li a {
+           display: block;
+           padding: 10px 20px;
+           color: var(--text-color);
+           text-decoration: none;
+           transition: all 0.3s;
+           font-size: 0.9rem;
+        }
+
+        
+        #mainmenu ul li a:hover {
+            background-color: #f5f5f5;
+            color: var(--primary-color);
+            padding-left: 25px;
+        }
+        
+        #mainmenu ul ul {
+            left: 100%;
+            top: 0;
+        }
+        
+        /* Subheader */
+        #subheader {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/wide1.jpg') center center;
+            background-size: cover;
+            padding: 120px 0;
+            color: white;
+            text-align: center;
+            margin-top: -90px;
+            padding-top: 180px;
+        }
+        
+        #subheader h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .small-border-deco {
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+        
+        .small-border-deco span {
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 0 auto;
+        }
+        
+        .crumb {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .crumb li {
+            display: inline-block;
+        }
+        
+        .crumb li a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .crumb li a:hover {
+            text-decoration: underline;
+        }
+        
+        .crumb .sep {
+            margin: 0 12px;
+            color: #cbd5e0;
+        }
+        
+        /* Content Styles */
+        .pic-services img {
+            margin-bottom: 25px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .content-section {
+            padding: 60px 0;
+        }
+        
+        ul:not([class]) {
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+        
+        ul:not([class]) li {
+            margin-bottom: 12px;
+            position: relative;
+            line-height: 1.7;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding: 20px 25px;
+            margin: 30px 0;
+            font-style: italic;
+            color: var(--secondary-color);
+            background-color: #f9f9f9;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .spacer-single {
+            height: 40px;
+            clear: both;
+        }
+        
+        .feature-box {
+            text-align: center;
+            padding: 30px 20px;
+            transition: all 0.3s ease;
+            height: 100%;
+            border-radius: 8px;
+            background: var(--white);
+            box-shadow: var(--shadow);
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .feature-box .icon-lg {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .feature-box h4 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        /* Sidebar Styles - FIXED */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .widget {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .services-menu h3 {
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 15px 20px;
+            margin: 0;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .services-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .services-list li {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .services-list li:last-child {
+            border-bottom: none;
+        }
+
+        .services-list a {
+            display: block;
+            padding: 12px 20px;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 14px;
+        }
+
+        .services-list a::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--primary-color);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .services-list a:hover::before,
+        .services-list a.active::before {
+            transform: scaleY(1);
+        }
+
+        .services-list a:hover,
+        .services-list a.active {
+            background: rgba(248, 193, 0, 0.1);
+            color: var(--secondary-color);
+            padding-left: 25px;
+        }
+        
+        .cta-widget {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 25px 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        
+        .cta-widget h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .cta-widget p {
+            opacity: 0.9;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--white);
+            color: var(--secondary-color);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--white);
+            font-size: 14px;
+        }
+        
+        .btn:hover {
+            background: transparent;
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+       
+        /* Call to Action */
+        .call-to-action {
+            padding: 60px 0;
+            background: var(--gradient);
+            color: white;
+        }
+        
+        .call-to-action h3 {
+            margin: 10px 0;
+            font-weight: 600;
+        }
+        
+        .btn-primary-custom {
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary-custom:hover {
+            background: #e6b400;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: var(--dark-color);
+            color: #cbd5e0;
+            padding: 70px 0 0;
+        }
+        
+        footer h3 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            position: relative;
+            padding-bottom: 12px;
+            font-weight: 600;
+        }
+        
+        footer h3:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--dark-color);
+        }
+        
+        footer .widget-address address {
+            margin-bottom: 0;
+            line-height: 1.8;
+        }
+        
+        footer .widget-address address span {
+            display: block;
+            margin-bottom: 12px;
+        }
+        footer .widget {
+           background: transparent;
+           box-shadow: none;
+        }
+        
+        footer a {
+            color: #cbd5e0;
+            transition: color 0.3s;
+        }
+        
+        footer a:hover {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .subfooter {
+            background-color: #1a202c;
+            padding: 25px 0;
+            margin-top: 50px;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 38px;
+            height: 38px;
+            line-height: 38px;
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            margin-left: 8px;
+            transition: all 0.3s;
+            color: white;
+        }
+        
+        .social-icons a:hover {
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Back to top button */
+        #back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            text-align: center;
+            line-height: 45px;
+            border-radius: 50%;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 1000;
+            text-decoration: none;
+            font-weight: 900;
+        }
+        
+        #back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        #back-to-top:hover {
+            background: #e6b400;
+            transform: translateY(-3px);
+        }
+        
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .preloader1 {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 991px) {
+            body {
+                padding-top: 80px;
+            }
+            
+            .sidebar {
+                margin-top: 40px;
+                position: static;
+            }
+            
+            #mainmenu > li > a {
+                padding: 15px 10px;
+            }
+            
+            /* Mobile menu styles */
+            #menu-btn {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                right: -300px;
+                width: 300px;
+                height: 100vh;
+                background: white;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                transition: right 0.3s ease;
+                z-index: 1000;
+                overflow-y: auto;
+                padding-top: 70px;
+            }
+            
+            nav.active {
+                right: 0;
+            }
+            
+            #mainmenu {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            #mainmenu > li {
+                width: 100%;
+            }
+            
+            #mainmenu > li > a {
+                padding: 15px 20px;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            
+            #mainmenu ul {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                display: none;
+                padding-left: 20px;
+            }
+            
+            #mainmenu li:hover > ul {
+                transform: none;
+            }
+            
+            #mainmenu ul ul {
+                left: 0;
+            }
+            
+            /* Show dropdowns on click for mobile */
+            .submenu-active > ul {
+                display: block !important;
+            }
+            
+            #subheader {
+                padding: 80px 0;
+                padding-top: 140px;
+                margin-top: -80px;
+            }
+            
+            #subheader h1 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .top-info .info-item {
+                display: block;
+                margin-bottom: 8px;
+                margin-right: 0;
+                text-align: center;
+            }
+            
+            .top-info .social {
+                margin-top: 10px;
+                text-align: center;
+            }
+            
+            #subheader {
+                padding: 60px 0;
+                padding-top: 120px;
+            }
+            
+            #subheader h1 {
+                font-size: 1.8rem;
+            }
+            
+            .call-to-action .col-md-8, 
+            .call-to-action .col-md-4 {
+                text-align: center !important;
+            }
+            
+            .call-to-action .col-md-4 {
+                margin-top: 20px;
+            }
+            
+            .crumb {
+                flex-direction: column;
+            }
+            
+            .crumb .sep {
+                margin: 5px 0;
+            }
+            
+            .feature-box {
+                margin-bottom: 25px;
+            }
+            
+            footer .col-md-4 {
+                margin-bottom: 30px;
+            }
+        }
+        @media (max-width: 767px) {
+    /* Hide top info on mobile devices */
+    .top-info {
+        display: none;
+    }
+    
+    /* Adjust header position since top info is hidden */
+    header {
+        top: 0;
+    }
+    
+    body {
+        padding-top: 70px; /* Reduced padding since top info is hidden */
+    }
+    
+    #subheader {
+        margin-top: -70px; /* Adjusted to match new body padding */
+    }
+}
+    </style>
+</head>
+
+<body class="page-services">
+    <div id="wrapper">
+        <!-- header begin -->
+        <header>
+            <div class="top-info">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <div class="info-item"><span class="id-color"><i class="fa fa-map-marker"></i></span>Industrial Area, Nairobi </div>
+                            <div class="info-item"><span class="id-color"><i class="fa fa-clock-o"></i></span>Monday - Friday 08:00-17:00</div>
+                            <div class="info-item"><span class="id-color"><i class="fa fa-phone"></i></span>+254 724 831 521</div>
+                        </div>
+                        <div class="col-md-4 text-md-end">
+                            <!-- social icons -->
+                            <div class="social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-rss"></i></a>
+                                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                <a href="#"><i class="far fa-envelope"></i></a>
+                            </div>
+                            <!-- social icons close -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <!-- logo begin -->
+                            <div id="logo">
+                                <a href="index.html">
+                                    <img class="logo" src="images/logo.png" alt="Geoken Energy" style="height: 40px;">
+                                </a>
+                            </div>
+                            <!-- logo close -->
+
+                            <!-- small button begin -->
+                            <span id="menu-btn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                            <!-- small button close -->
+
+                            <!-- mainmenu begin -->
+                            <nav>
+                                <ul id="mainmenu">
+                                    <li><a href="index.html">Home</a></li>
+                                    
+                                    <li><a href="#">Solutions</a>
+                                        <ul>
+                                            <li><a href="#">Renewable Energy</a>
+                                                <ul>
+                                                    <li><a href="automated-cleaning-systems-for-solar-panel.html">Automated cleaning systems for solar panel</a></li>
+                                                    <li><a href="solar-pv-systems.html">Solar PV Systems</a></li>
+                                                    <li><a href="solar-powered-water-pumps.html">Solar-powered Water Pumps</a></li>
+                                                    <li><a href="solar-lighting.html">Solar Street Lighting</a></li>
+                                                    <li><a href="solar-powered-back-up-systems.html">Solar Powered Back-up Systems</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="electrical-engineering.html">Electrical Engineering</a>
+                                            </li>
+                                            <li><a href="#">Mechanical Engineering</a>
+                                                <ul>
+                                                    <li><a href="heating-ventilation-air-conditioning.html">Heating, Ventilation & Air conditioning Services</a></li>
+                                                    <li><a href="plumbing-works.html">Plumbing Works</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="civil-engineering.html">Civil Engineering</a>
+                                            </li>
+                                            
+                                            <li><a href="control-instrumentation-automation.html">Control & Instrumentation & Automation</a>
+                                            </li>
+                                            
+                                            <li><a href="lighting.html">Lighting</a>
+                                            </li>
+                                            
+                                            <li><a href="petroleum-engineering.html">Petroleum Engineering</a>
+                                            </li>
+                                            
+                                            <li><a href="security-surveillance.html">Security & Surveillance</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <li><a href="#">About Us</a>
+                                        <ul>
+                                            <li><a href="about.html">Company</a></li>
+                                            <li><a href="team.html">Team</a></li>
+                                        </ul>
+                                    </li>
+                                   
+                                    <li><a href="projects.html">Projects</a>
+                                    </li>
+                                    
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+
+        <!-- subheader -->
+        <section id="subheader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="animate__animated animate__fadeInDown">Solar Thermal Hot Water Systems</h1>
+                        <div class="small-border-deco"><span></span></div>
+                        <ul class="crumb">
+                            <li><a href="Home.html">Home</a></li>
+                            <li class="sep">></li>
+                            <li>Solutions</li>
+                            <li class="sep">></li>
+                            <li>Solar Thermal Hot Water Systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- subheader close -->
+
+        <!-- content begin -->
+        <div id="content" class="content-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-6 pic-services">
+                                <img src="images/solar_pv_systems1.jpg" class="img-responsive" alt="Solar PV Systems Installation">
+                                <img src="images/solar_inverter.jpg" class="img-responsive" alt="Solar Inverter">
+                            </div>
+
+                            <div class="col-md-6">
+                                <p>We design systems to operate at peak efficiency. Our team of experienced engineers will survey your premises and design a system that is suitable for your needs. </p>
+                                <p>We will install your solar water heating system efficiently and quickly. We test all new installations to ensure that they meet the required efficiency and performance standards.</p><br>
+                                <p>Our maintenance service ensures that your solar water heating system operates at peak efficiency all the time.</p><br>
+                                <p>Send us a message or call +254(0)704717916 for a free site survey or more information about our services</p>
+                                <blockquote>Our maintenance service ensures that your solar water heating system operates at peak efficiency all the time.</blockquote>
+
+                               <p>We supply and install very quality systems, including:</p>
+                               <ul>
+                                   <li>Siphon type solar water heating units ideal for residential applications</li>
+                                   <li>Centralised Solar water heating systems designed for large commercial installations.</li>
+                                   <li>Solar swimming pool heating systems.</li>
+                               </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="sidebar">
+                            <div class="widget services-menu">
+                                <h3>Our Services</h3>
+                                <ul class="services-list">
+                                    <li><a href="automated-cleaning-systems-for-solar-panel.html">Automated Cleaning Systems for Solar Panel</a></li>
+                                    <li><a href="solar-pv-systems.html" class="active">Solar PV Systems</a></li>
+                                    <li><a href="solar-powered-water-pumps.html">Solar Powered Water Pumps</a></li>
+                                    <li><a href="solar-lighting.html">Solar Street Lighting</a></li>
+                                    <li><a href="solar-powered-back-up-systems.html">Solar Powered Back-up Systems</a></li>
+                                    <li><a href="solar-thermal-hot-water-systems.html">Solar Thermal Hot Water Systems</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="widget cta-widget">
+                                <h4>Need Expert Help?</h4>
+                                <p>Looking for the best partner for your next solar project? We provide comprehensive solutions tailored to your needs.</p>
+                                <a href="contact.html" class="btn">Get Free Quote</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- section begin -->
+        <section class="call-to-action">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h3 class="mt10">Ready to switch to solar energy?</h3>
+                        <p>Get a free consultation and quote for your solar PV system installation.</p>
+                    </div>
+
+                    <div class="col-md-4 text-md-end">
+                        <a href="contact.html" class="btn btn-primary-custom">Get a Quote</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- section close -->
+
+        <!-- footer begin -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="images/logo.png" class="logo-small" alt="Geoken Energy" style="height: 45px; margin-bottom: 15px;">
+                        <p>Leading provider of renewable energy solutions in Kenya and East Africa. We deliver sustainable power solutions for a brighter future.</p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="widget">
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li><a href="solar-pv-systems.html">Solar PV Systems</a></li>
+                                <li><a href="electrical-engineering.html">Electrical Engineering</a></li>
+                                <li><a href="civil-engineering.html">Civil Engineering</a></li>
+                                <li><a href="control-instrumentation-automation.html">Control & Instrumentation</a></li>
+                                <li><a href="security-surveillance.html">Security Surveillance</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h3>Contact Us</h3>
+                        <div class="widget widget-address">
+                            <address>
+                                <span><i class="fa fa-map-marker id-color"></i> Industrial Area, Nairobi</span>
+                                <span><i class="fa fa-phone id-color"></i> <strong>Phone:</strong> +254 724 831 521</span>
+                                <span><i class="fa fa-phone id-color"></i> <strong>Phone:</strong> +254 764 039 033</span>
+                                <span><i class="fa fa-envelope id-color"></i> <strong>Email:</strong> <a href="mailto:info@geoken.co.ke">info@geoken.co.ke</a></span>
+                                <span><i class="fa fa-globe id-color"></i> <strong>Web:</strong> <a href="http://geoken.co.ke">http://geoken.co.ke</a></span>
+                            </address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            &copy; Copyright 2023 - Geoken Energy Ltd | All Rights Reserved                    
+                        </div>
+                        <div class="col-md-6 text-md-end">
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-rss"></i></a>
+                                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+
+        <a href="#" id="back-to-top"></a>
+        <div id="preloader">
+            <div class="preloader1"></div>
+        </div>
+    </div>
+
+    <!-- Javascript Files -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Back to top button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 300) {
+                $('#back-to-top').addClass('visible');
+            } else {
+                $('#back-to-top').removeClass('visible');
+            }
+            
+            // Header scroll effect
+            if ($(window).scrollTop() > 50) {
+                $('header').addClass('scrolled');
+            } else {
+                $('header').removeClass('scrolled');
+            }
+        });
+        
+        $('#back-to-top').click(function(e) {
+            e.preventDefault();
+            $('html, body').animate({scrollTop:0}, '300');
+        });
+        
+        // Preloader
+        $(window).on('load', function() {
+            $('#preloader').fadeOut('slow', function() {
+                $(this).remove();
+            });
+        });
+        
+        // Mobile menu toggle
+        $('#menu-btn').click(function(e) {
+            e.stopPropagation();
+            $(this).toggleClass('open');
+            $('nav').toggleClass('active');
+        });
+        
+        // Close menu when clicking outside
+        $(document).on('click', function(e) {
+            if (!$(e.target).closest('nav').length && !$(e.target).is('#menu-btn')) {
+                $('#menu-btn').removeClass('open');
+                $('nav').removeClass('active');
+            }
+        });
+        
+        // Mobile submenu handling
+        $('#mainmenu li a').on('click', function(e) {
+            if ($(window).width() <= 991) {
+                if ($(this).siblings('ul').length) {
+                    e.preventDefault();
+                    $(this).parent('li').toggleClass('submenu-active');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
